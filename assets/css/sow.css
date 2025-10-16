@@ -1,0 +1,446 @@
+/* ============================================
+   SOW SPECIFIC STYLES - sow.css
+   Styles specific to the website analysis report
+   ============================================ */
+
+/* Sticky Header Navigation */
+header {
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+  margin: 0 20px;
+  padding: 0.75rem 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: right;
+  gap: clamp(0.5rem, 2vw, 2rem);
+  flex-wrap: nowrap;
+  padding: 0;
+}
+
+nav ul li a {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  white-space: nowrap;
+  font-weight: 450;
+}
+
+/* Cover Section */
+.cover {
+  background: var(--cream);
+  padding: 8rem 8rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: clamp(2rem, 15vw, 15rem);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  position: relative;
+  z-index: 2;
+}
+
+.flowers-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 30%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.flowers-image {
+  width: min(85%, 1100px);
+  height: auto;
+  transform: translateY(-35%);
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .cover {
+    padding: 6rem 2rem;
+    min-height: 60vh;
+  }
+
+  .flowers-container {
+    top: 18%;
+  }
+
+  .flowers-image {
+    width: min(95%, 800px);
+    transform: translateY(-30%);
+  }
+}
+
+@media (max-width: 480px) {
+  .cover {
+    padding: 4rem 1rem;
+    min-height: 50vh;
+  }
+
+  .flowers-container {
+    top: 20%;
+  }
+
+  .flowers-image {
+    width: 100%;
+    transform: translateY(-25%);
+  }
+}
+/* Analysis Sections */
+.analysis-section {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.analysis-section:last-of-type {
+  border-bottom: none;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.analysis-section h2 {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0;
+}
+
+.arrow-icon {
+  width: 64px;
+  height: auto;
+}
+
+.site-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  justify-content: flex-end;
+}
+
+.site-info a {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+/* Site Frame (iframe) */
+.site-frame {
+  width: 100%;
+  height: 600px;
+  border: 1px solid var(--border-color);
+  margin: 0;
+  background: #f9f9f9;
+}
+
+/* Analysis Content - Two Column Layout */
+.analysis-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.analysis-column {
+  /* Each column takes its grid space */
+}
+
+/* Screenshots Grid */
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.screenshots-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #e8e8e8;
+}
+
+/* Conclusion Box */
+.conclusion-box {
+  background: #bfc9dd;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.conclusion-box h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.conclusion-box p {
+  text-align: justify;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background: var(--cream);
+  padding: 4rem 1rem;
+  text-align: right;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-size: 1.2rem;
+  text-align: right;
+  margin: 0;
+}
+
+footer .footer-flowers {
+  width: 300px;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.github-icon {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s ease;
+  margin-top: 0.2rem;
+}
+
+.github-icon:hover {
+  opacity: 0.7;
+}
+.footer-flowers:hover {
+  transform: translateY(-0%) rotate(360deg);
+  transition: transform 1s ease-in-out;
+}
+
+footer .footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer .footer-text h1 {
+  font-size: clamp(9rem, 3vw, 2rem);
+  margin: 0rem;
+  line-height: 1.2;
+}
+
+/* Unified Responsive Design */
+@media (max-width: 768px) {
+  /* Navigation */
+  nav ul {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  /* Cover title */
+  .title {
+    font-size: clamp(5rem, 10vw, 6rem);
+    padding: 2rem 1rem;
+  }
+
+  /* Analysis header */
+  .analysis-header {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .arrow-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .analysis-section h2 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    padding: 0.4rem 1rem;
+  }
+
+  /* Layout */
+  .analysis-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .site-frame {
+    height: 400px;
+  }
+
+  .screenshots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  .screenshots-grid img {
+    height: 200px;
+  }
+
+  .conclusion-box {
+    padding: 1.5rem;
+    margin: 1.5rem 1rem;
+  }
+
+  /* Cover section padding */
+  .cover {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Previous styles remain... */
+
+  /* Footer responsive adjustments */
+  footer {
+    padding: 1rem;
+  }
+
+  footer .footer-flowers {
+    width: 150px;
+    margin-right: 1.5rem;
+  }
+
+  footer .footer-text h1 {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Previous styles remain... */
+
+  /* Footer mobile adjustments */
+  footer {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  footer .footer-flowers {
+    width: 120px;
+    margin: 0 auto;
+    order: 2;
+  }
+
+  footer .footer-text {
+    order: 1;
+    width: 100%;
+  }
+
+  footer .footer-text h1 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .footer-credits {
+    align-items: center;
+  }
+
+  footer p {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  /* Previous mobile styles... */
+  nav ul {
+    gap: 1rem;
+  }
+
+  .analysis-header {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .title-container {
+    width: 100%;
+  }
+
+  .site-info {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .analysis-section h2 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    width: 100%;
+  }
+
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .screenshots-grid img {
+    height: 180px;
+  }
+
+  .cover {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .conclusion-box {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .conclusion-box h3 {
+    font-size: 1.5rem;
+  }
+}

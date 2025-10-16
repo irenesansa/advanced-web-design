@@ -1,0 +1,141 @@
+/* ============================================
+   BASE STYLES - index.css
+   General styles for the entire website
+   ============================================ */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+  --text-color: #33423d;
+  --text-light: #666;
+  --bg-color: #bfc9dd;
+  --white: #f0f2e2;
+  --cream: #bfc9dd;
+  --border-color: #33423d;
+  --max-width: 900px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Body Base */
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--white);
+}
+
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Instrument Serif", serif;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 12rem;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  opacity: 0.6;
+  outline: none;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Strong Text */
+strong {
+  font-weight: bold;
+}
+
+/* Main Container */
+main {
+  padding: 0 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+}
