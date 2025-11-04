@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #111;
+}
+
+.header {
+  background: #fff;
+  color: #111;
+  padding: 20rem;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  background-image: url(https://horsemagazine.es/wp-content/uploads/2015/06/audrey-hepburn-wallpaper-Actors-Audrey-Hepburn.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: 50%;
+}
+
+/* Parallax background with fixed attachment (minimal, grayscale SVG) */
+.parallax-bg {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23000000" width="1200" height="600"/><circle cx="200" cy="150" r="80" fill="%23ffffff" opacity="0.06"/><circle cx="800" cy="400" r="120" fill="%23ffffff" opacity="0.04"/></svg>');
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Regular scrolling content (foreground) */
+.content {
+  background: #fff;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h2 {
+  color: #111;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.comparison {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fafafa;
+  border-left: 2px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.code-box {
+  background: #f5f5f5;
+  color: #111;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.reflection {
+  background: #fff8e1;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  border-left: 3px solid #e0a800;
+}
+
+.reflection strong {
+  color: #333;
+}
+
+/* Non-parallax comparison section (grayscale) */
+.normal-bg {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23222222" width="1200" height="600"/><circle cx="300" cy="250" r="100" fill="%23ffffff" opacity="0.05"/><circle cx="900" cy="350" r="80" fill="%23ffffff" opacity="0.04"/></svg>');
+  min-height: 400px;
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* JavaScript-based Parallax Section (muted grayscale) */
+.parallax-js-section {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #111, #333);
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.layer-back {
+  font-size: 6rem;
+  opacity: 0.06;
+  font-weight: 700;
+}
+
+.layer-middle {
+  font-size: 3rem;
+  opacity: 0.12;
+  font-weight: 600;
+}
+
+.layer-front {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Image layers for parallax (grayscale SVGs) */
+.parallax-image-section {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  background: #111;
+}
+
+.image-layer {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.image-layer-1 {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23111111" width="1200" height="800"/><circle cx="200" cy="600" r="150" fill="%23ffffff" opacity="0.03"/></svg>');
+  z-index: 1;
+}
+
+.image-layer-2 {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="transparent" width="1200" height="800"/><circle cx="600" cy="400" r="100" fill="%23ffffff" opacity="0.04"/></svg>');
+  z-index: 2;
+}
+
+.image-layer-3 {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><text x="600" y="400" text-anchor="middle" font-size="80" fill="white" opacity="0.9" font-family="Arial">My Fair Lady</text></svg>');
+  z-index: 3;
+}
+
+.speed-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  z-index: 10;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .parallax-bg,
+  .normal-bg {
+    background-attachment: scroll;
+    min-height: 300px;
+    font-size: 1.1rem;
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .parallax-js-section,
+  .parallax-image-section {
+    height: 420px;
+  }
+
+  .layer-back {
+    font-size: 3.5rem;
+  }
+  .layer-middle {
+    font-size: 1.6rem;
+  }
+  .layer-front {
+    font-size: 1.1rem;
+  }
+}
