@@ -28,28 +28,12 @@ body {
   align-items: center;
 }
 
-/* Parallax background with fixed attachment (minimal, grayscale SVG) */
-.parallax-bg {
-  min-height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(https://media.vanityfair.com/photos/583d9d80ca6f7ee00ec291b3/master/pass/breakfast-at-tiffanys-legacy-tcm.jpg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
 /* Regular scrolling content (foreground) */
 .content {
   background: #fff;
-  padding: 3rem 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  margin: 0;
 }
 
 .content h2 {
@@ -63,6 +47,12 @@ body {
   margin-bottom: 1rem;
   color: #333;
   font-size: 0.95rem;
+}
+
+.story-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
 
 .comparison {
@@ -96,6 +86,24 @@ body {
   color: #333;
 }
 
+/* Parallax background with fixed attachment (minimal, grayscale SVG) */
+.parallax-bg {
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://media.vanityfair.com/photos/583d9d80ca6f7ee00ec291b3/master/pass/breakfast-at-tiffanys-legacy-tcm.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+  margin: 0;
+}
+
 /* Non-parallax comparison section (grayscale) */
 .normal-bg {
   min-height: 500px;
@@ -110,6 +118,8 @@ body {
   color: #fff;
   font-size: 1.5rem;
   font-weight: 600;
+  width: 100%;
+  margin: 0;
 }
 
 /* JavaScript-based Parallax Section (muted grayscale) */
@@ -118,6 +128,8 @@ body {
   height: 600px;
   overflow: hidden;
   background: linear-gradient(to bottom, #111, #333);
+  width: 100%;
+  margin: 0;
 }
 
 .parallax-layer {
@@ -155,6 +167,8 @@ body {
   height: 500px;
   overflow: hidden;
   background: #111;
+  width: 100%;
+  margin: 0;
 }
 
 .image-layer {
@@ -219,7 +233,7 @@ body {
 .story-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 .stat-display {
@@ -251,6 +265,80 @@ body {
   letter-spacing: 1px;
 }
 
+.curiosities-section {
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.curiosities-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.flip-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.flip-card-front {
+  background-color: #000;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.flip-card-back {
+  background-color: #f0f0f0;
+  color: #111;
+  transform: rotateY(180deg);
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 2rem 1.5rem;
+}
+
 @media (max-width: 768px) {
   .parallax-bg,
   .normal-bg {
@@ -259,7 +347,7 @@ body {
     font-size: 1.1rem;
   }
 
-  .content {
+  .story-content {
     padding: 2rem 1rem;
   }
 
@@ -289,5 +377,22 @@ body {
 
   .stat-number {
     font-size: 2rem;
+  }
+
+  .flip-cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flip-card {
+    height: 250px;
+  }
+
+  .flip-card-front {
+    font-size: 1.2rem;
+  }
+
+  .flip-card-back {
+    font-size: 0.9rem;
   }
 }
